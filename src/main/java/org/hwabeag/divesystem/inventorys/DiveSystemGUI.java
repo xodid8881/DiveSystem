@@ -10,6 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.hwabeag.divesystem.config.ConfigManager;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,8 +25,8 @@ public class DiveSystemGUI implements Listener {
     private ItemStack getDiveShopItemData(Player p, int key) {
         String name = p.getName();
         int page = PlayerConfig.getInt(name + ".페이지");
-        String shopname = PlayerConfig.getString(name + ".설정상점");
-        ItemStack item = DiveSystemConfig.getItemStack("잠수상점." + shopname + ".물품." + page + "." + key);
+        String shopname = PlayerConfig.getString(name + ".구매상점");
+        @Nullable ItemStack item = DiveSystemConfig.getItemStack("잠수상점." + shopname + ".물품." + page + "." + key);
         ItemStack cloneitem = item.clone();
         ItemMeta meta = cloneitem.getItemMeta();
         ArrayList<String> loreList = new ArrayList<>();
