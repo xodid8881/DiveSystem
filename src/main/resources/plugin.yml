@@ -1,0 +1,15 @@
+name: DiveSystem
+version: '${version}'
+main: org.hwabeag.divesystem.DiveSystem
+api-version: '1.21'
+
+commands:
+  잠수포인트:
+    description: 잠수포인트를 확인/관리합니다.
+    usage: /잠수포인트 <지급|회수|설정|확인>
+  잠수상점:
+    description: 잠수상점을 관리하거나 엽니다.
+    usage: /잠수상점 <열기|생성|제거|물품설정|금액설정>
+  잠수금액:
+    description: 잠수상점 물품 금액을 설정합니다.
+    usage: /잠수금액 <금액>
